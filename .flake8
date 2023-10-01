@@ -1,0 +1,6 @@
+[flake8]
+exclude =
+    .gitignore,
+    __pycache__,
+    bot-env,
+    build

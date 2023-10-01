@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  bro:
+    container_name: brodiscordbot
+    build: .
+    env_file:
+      - .env
