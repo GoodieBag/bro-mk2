@@ -4,5 +4,5 @@ services:
   bro:
     container_name: brodiscordbot
     build: .
-    env_file:
-      - .env
+    environment:
+      - DISCORD_BOT_TOKEN=$DISCORD_BOT_TOKEN
