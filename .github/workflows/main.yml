@@ -23,3 +23,5 @@ jobs:
     - name: Rebuild and start container
       run: |
         docker-compose up --build --force-recreate bro
+      env:
+        DISCORD_BOT_TOKEN: ${{secrets.DISCORD_BOT_TOKEN}}
