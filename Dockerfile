@@ -3,6 +3,8 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
+RUN apk add libffi-dev
+
 COPY requirements.txt /app
 RUN pip install -r requirements.txt
 
