@@ -17,7 +17,7 @@ class BotStatsAPI(commands.Cog):
 
         runner = web.AppRunner(app)
         await runner.setup()
-        self.site = web.TCPSite(runner, "192.168.1.193", 8999)
+        self.site = web.TCPSite(runner, None, 8999)
         await self.bot.wait_until_ready()
         await self.site.start()
 
