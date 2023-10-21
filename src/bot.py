@@ -15,10 +15,12 @@ async def setup_hook() -> None:
     for cog in COGS:
         await bot.load_extension(cog)
 
+
 @bot.command()
 async def sync(ctx):
     print("sync command")
     await bot.tree.sync()
-    await ctx.send('Command tree synced.')
-            
+    await ctx.send("Command tree synced.")
+
+
 bot.run(os.environ.get("DISCORD_BOT_TOKEN"))

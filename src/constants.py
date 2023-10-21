@@ -1,1 +1,1 @@
-COGS = ["cogs.misc.general"]
+COGS = ["cogs.misc.general", "cogs.background.botstatsapi"]
