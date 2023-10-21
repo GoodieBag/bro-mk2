@@ -13,4 +13,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
+EXPOSE 8999
+
 CMD ["python", "src/bot.py"]
