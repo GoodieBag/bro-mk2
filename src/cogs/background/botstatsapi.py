@@ -17,7 +17,7 @@ class BotStatsAPI(commands.Cog):
 
         runner = web.AppRunner(app)
         await runner.setup()
-        self.site = web.TCPSite(runner, None, 8999)
+        self.site = web.TCPSite(runner, '0.0.0.0', 8999)
         await self.bot.wait_until_ready()
         await self.site.start()
 
@@ -26,4 +26,6 @@ class BotStatsAPI(commands.Cog):
 
 
 async def setup(bot: commands.Bot) -> None:
-    await bot.add_cog(BotStatsAPI(bot))
+    api = BotStatsAPI(bot)
+    await bot.add_cog(api)
+    bot.loop.create_task(api.webserver())
