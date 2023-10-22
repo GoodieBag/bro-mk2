@@ -9,7 +9,9 @@ class BotStatsAPI(commands.Cog):
 
     async def webserver(self):
         async def handler(request):
-            data = {"status": "online", "count": "2"}
+            
+            data = {"status": "Online" if "Bro" in str(self.bot.user) else "Offline",
+                    "count": str(len(self.bot.guilds))}
             return web.json_response(data)
 
         app = web.Application()
